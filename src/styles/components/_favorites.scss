@@ -1,0 +1,120 @@
+#favorites {
+  position: fixed;
+  top: 0;
+  background: $white;
+  height: 100%;
+  width: 482px;
+  padding: 43px 53px;
+  overflow-y: scroll;
+  z-index: 9999;
+  right: 0;
+  animation: linear;
+  animation-name: opacity-modal;
+  animation-duration: .4s;
+  opacity: 1;
+
+  .favorite-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 46px;
+
+    button {
+      background: 0;
+      border: 0;
+    }
+    h5{
+      font-size: 25px;
+    }
+    .close-favorite {
+
+      img {
+        width: 30px;
+      }
+    }
+
+  }
+
+
+  .favorite-wrapper {
+    background: $white;
+    border: 1.5px solid #DEE0EC;
+    border-radius: 30px;
+    padding: 11px;
+    display: flex;
+    margin-bottom: 32px;
+    align-items: center;
+    transition: box-shadow .2s ease;
+    cursor: pointer;
+
+
+    .favorite-box {
+      position: relative;
+
+
+      img {
+        width: 140px;
+      }
+      &:first-child{
+        margin-right: 25px;
+
+
+      }
+
+      h6{
+        @include paragraph($grey, left, 13px);
+        margin-bottom: 9px;
+      }
+
+      h4{
+        @include paragraph($darkGrey, left, 16px);
+        font-weight: bold;
+        margin-bottom: 7px;
+      }
+
+      p{
+        @include paragraph($grey, left, 13px);
+        margin-bottom: 9px;
+      }
+      p.price {
+        @include paragraph($mint, left, 13px);
+        margin:0;
+        font-weight: bold;
+      }
+
+      .delete-btn{
+        display: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: 0;
+        border: 0;
+        cursor: pointer;
+
+      }
+      .fav-badge{
+        position: absolute;
+        bottom: 11px;
+        left: 11px;
+        width: 83%;
+        background: $white;
+        border-radius: 14px;
+        font-size: 11px;
+        padding: 7px 8.5px;
+        text-align: center;
+        font-weight: bold;
+        color:$darkGrey;
+
+      }
+
+    }
+
+    &:hover {
+      box-shadow: 0 55px 80px -35px rgb(110, 113, 145);
+
+      .delete-btn{
+        display: block;
+      }
+    }
+  }
+}

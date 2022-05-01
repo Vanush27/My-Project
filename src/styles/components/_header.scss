@@ -1,0 +1,115 @@
+header {
+  width: 100%;
+  height: 72px;
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  z-index: 8;
+  transition: background .2s ease;
+
+
+  .content {
+    width: 92%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 85px;
+
+
+    .header-wrapper {
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+
+      .logo img {
+        width: 120px;
+      }
+
+
+      .navbar {
+        font-family: 'Sora', 'sans-serif';
+        width: calc(100% - 153px);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        ul {
+          display: flex;
+          align-items: center;
+          width: 682px;
+          justify-content: space-between;
+
+          li {
+            list-style: none;
+
+            &:nth-child(1){
+              margin-right: 30px;
+
+              &:after {
+                content: '';
+                width: 1.5px;
+                background: #fff;
+                height: 38px;
+                position: absolute;
+                z-index: 9;
+                top: -10px;
+                right: 30px;
+                opacity: 0.5;
+              }
+            }
+            &:nth-child(3){
+              margin-right: 39px;
+            }
+            &:nth-child(4){
+              margin-right: 26px;
+            }
+            &:nth-child(5){
+              margin-right: 26px;
+            }
+
+            .btn-icon {
+              background: none;
+              border: none;
+              @include paragraph($white,left,13px);
+
+              &.active {
+                position: relative;
+
+                &:after{
+                  content: '';
+                  width: 5px;
+                  height: 5px;
+                  background: $red;
+                  display: block;
+                  position: absolute;
+                  top:0;
+                  right: 3px;
+                  border-radius: 50%;
+                }
+              }
+            }
+
+            a {
+              color: $white;
+            }
+
+
+          }
+
+
+
+        }
+
+        button.btn{
+          @include button(rgba(255,255,255,0.3),#ffffff,13px, 226px, 40px);
+          font-weight: 600;
+          backdrop-filter: blur(30px);
+        }
+      }
+
+    }
+
+
+  }
+}
